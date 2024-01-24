@@ -56,7 +56,7 @@ class Obstacle:
     texture: Optional[str] = None
 
     #: material properties to apply in visualization.
-    material: Material = Material()
+    material: Material = field(default_factory=Material)
 
     tensor_args: TensorDeviceType = TensorDeviceType()
 

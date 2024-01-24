@@ -13,7 +13,7 @@
 # Standard Library
 import math
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence, Union
 
 # Third Party
@@ -67,7 +67,7 @@ class TrajOptSolverConfig:
     num_seeds: int = 1
     bias_node: Optional[T_DOF] = None
     interpolation_dt: float = 0.01
-    traj_evaluator_config: TrajEvaluatorConfig = TrajEvaluatorConfig()
+    traj_evaluator_config: TrajEvaluatorConfig = field(default_factory=TrajEvaluatorConfig)
     traj_evaluator: Optional[TrajEvaluator] = None
     evaluate_interpolated_trajectory: bool = True
     cspace_threshold: float = 0.1
